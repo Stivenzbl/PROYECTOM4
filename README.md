@@ -7,7 +7,7 @@
 
 ## 🚀 Demo y Enlaces
 - **Despliegue en Producción (Firebase Hosting):** [https://m4-stiven-zabala.web.app](https://m4-stiven-zabala.web.app)
-- **Repositorio en GitHub:** [https://github.com/tu-usuario/gestor-tareas-matecode](https://github.com/tu-usuario/gestor-tareas-matecode) *(Actualizar con tu usuario)*
+- **Repositorio en GitHub:** [https://github.com/Stivenzbl/PROYECTOM4](https://github.com/Stivenzbl/PROYECTOM4)
 
 ---
 
@@ -116,8 +116,8 @@ service cloud.firestore {
 
 ### 1. Clonar el repositorio y navegar a la carpeta
 ```bash
-git clone https://github.com/tu-usuario/gestor-tareas-matecode.git
-cd m4
+git clone https://github.com/Stivenzbl/PROYECTOM4.git
+cd PROYECTOM4
 ```
 
 ### 2. Instalar dependencias
