@@ -33,6 +33,9 @@ dist-ssr
 # Vercel
 .vercel
 
+# Firebase CLI cache
+.firebase/
+
 # Coverage directory used by testing tools
 coverage
 
