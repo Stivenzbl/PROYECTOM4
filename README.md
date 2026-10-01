@@ -6,8 +6,8 @@
 ---
 
 ## 🚀 Demo y Enlaces
-- **Repositorio en GitHub:** [https://github.com/tu-usuario/gestor-tareas-matecode](https://github.com/tu-usuario/gestor-tareas-matecode) *(Actualizar con tu URL)*
-- **Despliegue en Producción (Vercel):** [https://matecode-tasks.vercel.app](https://matecode-tasks.vercel.app) *(Actualizar tras desplegar en Vercel)*
+- **Despliegue en Producción (Firebase Hosting):** [https://m4-stiven-zabala.web.app](https://m4-stiven-zabala.web.app)
+- **Repositorio en GitHub:** [https://github.com/tu-usuario/gestor-tareas-matecode](https://github.com/tu-usuario/gestor-tareas-matecode) *(Actualizar con tu usuario)*
 
 ---
 
