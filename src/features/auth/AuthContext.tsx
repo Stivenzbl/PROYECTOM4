@@ -4,6 +4,8 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
   onAuthStateChanged,
   updateProfile,
@@ -40,6 +42,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setLoading(false);
       return;
     }
+
+    // Gestionar retorno de signInWithRedirect si la ventana emergente fue bloqueada
+    getRedirectResult(auth)
+      .then((userCred) => {
+        if (userCred?.user) {
+          setCurrentUser(userCred.user);
+        }
+      })
+      .catch((err) => {
+        if (err?.code) {
+          const msg = translateFirebaseAuthError(err.code);
+          setError(msg);
+        }
+      });
 
     // Observer onAuthStateChanged para gestionar sesión persistente
     const unsubscribe = onAuthStateChanged(
@@ -94,6 +110,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await signInWithPopup(auth, googleProvider);
     } catch (err: unknown) {
       const code = (err as { code?: string })?.code || '';
+      if (code === 'auth/popup-blocked') {
+        console.warn('Popup bloqueado por el navegador. Redirigiendo automáticamente...');
+        try {
+          await signInWithRedirect(auth, googleProvider);
+          return;
+        } catch (redirectErr) {
+          console.error('Error en redirección:', redirectErr);
+        }
+      }
       const msg = translateFirebaseAuthError(code);
       setError(msg);
       throw new Error(msg);

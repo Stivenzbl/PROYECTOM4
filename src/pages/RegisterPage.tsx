@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { CheckSquare, Lock, Mail, User, Loader2, AlertCircle } from 'lucide-react';
@@ -11,8 +11,14 @@ export const RegisterPage: React.FC = () => {
   const [formError, setFormError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const { registerWithEmail, loginWithGoogle, error: authError, clearError } = useAuth();
+  const { currentUser, registerWithEmail, loginWithGoogle, error: authError, clearError } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate('/tasks', { replace: true });
+    }
+  }, [currentUser, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

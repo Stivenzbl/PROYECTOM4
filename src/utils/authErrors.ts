@@ -18,7 +18,7 @@ export function translateFirebaseAuthError(errorCode: string): string {
     case 'auth/popup-closed-by-user':
       return 'La ventana de inicio de sesión con Google fue cerrada antes de completar el proceso.';
     case 'auth/popup-blocked':
-      return 'El navegador bloqueó la ventana emergente de Google. Por favor, habilítala.';
+      return 'El navegador bloqueó la ventana emergente de Google. Si no fuiste redirigido automáticamente, haz clic en el icono 🚫 en la barra de direcciones de tu navegador y selecciona "Permitir siempre ventanas emergentes".';
     case 'auth/network-request-failed':
       return 'Error de conexión. Verifica tu conexión a internet e inténtalo de nuevo.';
     case 'auth/too-many-requests':
