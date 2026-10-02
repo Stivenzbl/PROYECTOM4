@@ -144,6 +144,7 @@ export const RegisterPage: React.FC = () => {
                 id="name"
                 data-testid="name-input"
                 type="text"
+                autoComplete="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Steven Perez"
@@ -166,6 +167,7 @@ export const RegisterPage: React.FC = () => {
                 id="register-email"
                 data-testid="register-email-input"
                 type="email"
+                autoComplete="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -189,6 +191,7 @@ export const RegisterPage: React.FC = () => {
                 id="register-password"
                 data-testid="register-password-input"
                 type="password"
+                autoComplete="new-password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -212,6 +215,7 @@ export const RegisterPage: React.FC = () => {
                 id="confirm-password"
                 data-testid="confirm-password-input"
                 type="password"
+                autoComplete="new-password"
                 required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
